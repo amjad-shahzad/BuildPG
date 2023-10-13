@@ -1,6 +1,7 @@
 name: Clone PostgreSQL Repository
 
 on:
+  push:
   schedule:
     - cron: '0 1 * * *'  # Schedule to run at 1 AM UTC
   workflow_dispatch: # This event trigger allows manual execution
