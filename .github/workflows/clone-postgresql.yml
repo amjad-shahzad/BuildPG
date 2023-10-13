@@ -14,4 +14,4 @@ jobs:
       - name: Checkout PostgreSQL Repository
         run: |
           git clone https://git.postgresql.org/git/postgresql.git
-        working-directory: /github/workspace
+        working-directory: /github
