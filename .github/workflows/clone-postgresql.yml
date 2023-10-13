@@ -13,5 +13,6 @@ jobs:
     steps:
       - name: Checkout PostgreSQL Repository
         run: |
+          mkdir /github/workflow
           git clone https://git.postgresql.org/git/postgresql.git
-        working-directory: /github
+        working-directory: /github/workflow
