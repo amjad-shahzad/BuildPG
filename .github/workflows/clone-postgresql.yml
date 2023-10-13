@@ -1,6 +1,7 @@
 name: Clone PostgreSQL Repository
 
 on:
+  push: # Placeholder event trigger
   schedule:
     - cron: '0 1 * * *'  # Schedule to run at 1 AM UTC
 
@@ -13,4 +14,3 @@ jobs:
         run: |
           git clone https://git.postgresql.org/git/postgresql.git
         working-directory: /github/workspace
-
