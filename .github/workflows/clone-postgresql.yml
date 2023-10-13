@@ -1,10 +1,8 @@
 name: Clone PostgreSQL Repository
 
 on:
-  push:
   schedule:
     - cron: '0 1 * * *'  # Schedule to run at 1 AM UTC
-  workflow_dispatch: # This event trigger allows manual execution
 
 jobs:
   clone:
@@ -13,6 +11,11 @@ jobs:
     steps:
       - name: Checkout PostgreSQL Repository
         run: |
-          mkdir /github/workflow
-          git clone https://git.postgresql.org/git/postgresql.git
-        working-directory: /github/workflow
+          mkdir -p /github/workspace  # Create the directory if needed
+          git clone https://git.postgresql.org/git/postgresql.git /github/workspace/postgresql
+        shell: /usr/bin/bash
+
+      - name: List Files
+        run: |
+          ls -la /github/workspace/postgresql
+        shell: /usr/bin/bash
