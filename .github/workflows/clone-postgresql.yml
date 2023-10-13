@@ -1,1 +1,16 @@
+name: Clone PostgreSQL Repository
+
+on:
+  schedule:
+    - cron: '0 1 * * *'  # Schedule to run at 1 AM UTC
+
+jobs:
+  clone:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout PostgreSQL Repository
+        run: |
+          git clone https://git.postgresql.org/git/postgresql.git
+        working-directory: /github/workspace
 
