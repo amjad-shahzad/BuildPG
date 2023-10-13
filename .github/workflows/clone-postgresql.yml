@@ -11,11 +11,9 @@ jobs:
     steps:
       - name: Checkout PostgreSQL Repository
         run: |
-          mkdir -p /github/workspace  # Create the directory if needed
+          mkdir -p /github/workspace
           git clone https://git.postgresql.org/git/postgresql.git /github/workspace/postgresql
-        shell: /usr/bin/bash
 
       - name: List Files
         run: |
           ls -la /github/workspace/postgresql
-        shell: /usr/bin/bash
